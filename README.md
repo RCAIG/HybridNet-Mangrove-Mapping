@@ -1,12 +1,12 @@
 # A hybrid neural network for mangrove mapping considering tide states using Sentinel-2 imagery
-Author: Longjie Ye, Qihao Weng* [link](https://www.sciencedirect.com/science/article/pii/S0034425725003219)
+Author: Longjie Ye, Qihao Weng* | [link](https://www.sciencedirect.com/science/article/pii/S0034425725003219)
 Remote Sensing of Environment
 
 ## Introduction
 Existing machine learning algorithms for mangrove mapping are incapable of delivering precise cartographic solutions under dynamic tidal conditions because of poor transferability. This study developed a generalized approach for large-area mangrove mapping using a hybrid neural network integrated with a vision transformer to effectively capture representative features. This project used Sentinel-2 imagery together with high-resolution Google Earth & UAV imagery to map the mangrove extent at a resolution of 10 meters for 2021. 
 
 This project was built upon the Python & Pytorch environment. To reduce pre-training time, we used the model weights pre-trained on open-source datasets provided by the segmentation_models.pytorch library.
-![figure](docs/Figure%101.JPG) 
+![figure](.\docs/Figure 1.JPG) 
 
 ## Set up environment
 Before going deeper, we need to set up the code environment. We encourage you to follow the guidelines below.
