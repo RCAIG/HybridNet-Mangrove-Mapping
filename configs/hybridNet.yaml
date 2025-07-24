@@ -17,7 +17,7 @@ dataloader:
     "/localssd/longjie/HybridNet/test"
 
 model:
-  input_channel: 6
+  num_layer: 5
   blocks: 5
   block_reps: 2
   media: 32

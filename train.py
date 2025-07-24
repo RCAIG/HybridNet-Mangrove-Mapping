@@ -235,7 +235,7 @@ def main():
 
     # model
     #model = SPFormer(**cfg.model).cuda()
-    model = EDGE_net(5)
+    model = EDGE_net(cfg.model.num_layer)
 
     count_parameters = gorilla.parameter_count(model)['']
     #logger.info(f'Parameters: {count_parameters / 1e6:.2f}M')
