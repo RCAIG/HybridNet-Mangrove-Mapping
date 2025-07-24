@@ -23,6 +23,8 @@ pip install -U albumentations --no-binary qudida,albumentations
 #This file can be found in this project
 pip install -r requirements.txt
 
+```
+
 ## Data usage
 The original Sentinel-2 images were downloaded from the Google Earth Engine. Make sure you have registered for one account in [GEE](https://earthengine.google.com).
 
@@ -35,6 +37,7 @@ python train.py configs/hybridNet.yaml
 
 # For test
 python test.py configs/hybridNet.yaml
+```
 
 ## TO BE ADDED
 The pretrained .pth will be released soon.
