@@ -41,7 +41,16 @@ The pretrained .pth will be released soon.
 
 
 # Citing
-If you find our work useful, please do not hesitate to cite it [HybridNet](https://www.sciencedirect.com/science/article/pii/S0034425725003219)
+If you find our work useful, please do not hesitate to cite it
+{Longjie Ye, Qihao Weng,
+A hybrid neural network for mangrove mapping considering tide states using Sentinel-2 imagery,
+Remote Sensing of Environment,
+Volume 329,
+2025,
+114917,
+ISSN 0034-4257,
+https://doi.org/10.1016/j.rse.2025.114917}
+[HybridNet](https://www.sciencedirect.com/science/article/pii/S0034425725003219)
 
 
 
