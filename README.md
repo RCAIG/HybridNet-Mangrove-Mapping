@@ -31,8 +31,8 @@ python train.py
 
 ```
 
-## TO BE ADDED
-The pretrained .pth will be released soon.
+## TO BE DONE
+Add explanation for hyperparameter configuration.
 
 
 # Citing
