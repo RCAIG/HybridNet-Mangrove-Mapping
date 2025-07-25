@@ -222,10 +222,9 @@ def main():
     os.makedirs(osp.abspath(cfg.work_dir), exist_ok=True)
     timestamp = time.strftime('%Y%m%d_%H%M%S', time.localtime())
     log_file = osp.join(cfg.work_dir, f'{timestamp}.log')
-    #logger = get_root_logger(log_file=log_file)
-    #logger.info(f'config: {args.config}')
+
     shutil.copy(args.config, osp.join(cfg.work_dir, osp.basename(args.config)))
-    #writer = SummaryWriter(cfg.work_dir)
+
 
     #device for running the model
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -234,28 +233,19 @@ def main():
     gorilla.set_random_seed(cfg.train.seed)
 
     # model
-    #model = SPFormer(**cfg.model).cuda()
     model = EDGE_net(cfg.model.num_layer)
 
     count_parameters = gorilla.parameter_count(model)['']
     #logger.info(f'Parameters: {count_parameters / 1e6:.2f}M')
 
     # optimizer and scheduler
-    #optimizer = gorilla.build_optimizer(model, cfg.optimizer)
+
     optimizer = torch.optim.AdamW(model.parameters(), lr=cfg.max_lr, weight_decay=cfg.weight_decay)
 
     #lr_scheduler = gorilla.build_lr_scheduler(optimizer, cfg.lr_scheduler)
     sched = torch.optim.lr_scheduler.OneCycleLR(optimizer, cfg.max_lr, epochs=cfg.epoch,
                                                 steps_per_epoch=cfg.steps_per_epoch)
     # pretrain or resume
-    #if args.resume:
-    #     logger.info(f'Resume from {args.resume}')
-    #     meta = gorilla.resume(args.resume, logger, model, optimizer, lr_scheduler)
-    #     start_epoch = meta['epoch']
-    # elif cfg.train.pretrain:
-    #     logger.info(f'Load pretrain from {cfg.train.pretrain}')
-    #     gorilla.load_checkpoint(model, cfg.train.pretrain, strict=False)
-
     # train and val dataset
     # A refers to Albumentations is a computer vision tool that boosts the performance of deep convolutional neural networks.
     t_train = A.Compose([ A.HorizontalFlip(), A.VerticalFlip(), 
@@ -277,15 +267,6 @@ def main():
     train_loader = build_dataset(train_set, cfg.batch_size)
     val_loader = build_dataset(val_set, cfg.batch_size)  
 
-    # if not args.skip_validate:
-    #     val_dataset = build_dataset(cfg.data.val, logger)
-    #     val_loader = build_dataloader(val_dataset, **cfg.dataloader.val)
-
-
-    # train and val
-    #logger.info('Training')
-    # import utils
-    # criterion = utils.criterion
 
     train(cfg.train.epochs, model, train_loader, val_loader, criterion, optimizer, sched, cfg, device)
 
