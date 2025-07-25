@@ -6,7 +6,7 @@ Remote Sensing of Environment
 Existing machine learning algorithms for mangrove mapping are incapable of delivering precise cartographic solutions under dynamic tidal conditions because of poor transferability. This study developed a generalized approach for large-area mangrove mapping using a hybrid neural network integrated with a vision transformer to effectively capture representative features. This project used Sentinel-2 imagery together with high-resolution Google Earth & UAV imagery to map the mangrove extent at a resolution of 10 meters for 2021. 
 
 This project was built upon the Python & Pytorch environment. To reduce pre-training time, we used the model weights pre-trained on open-source datasets provided by the segmentation_models.pytorch library.
-![figure](docs/Figure%201.JPG) 
+ 
 
 ## Set up environment
 Before going deeper, we need to set up the code environment. We encourage you to follow the guidelines below.
@@ -32,11 +32,8 @@ The original Sentinel-2 images were downloaded from the Google Earth Engine. Mak
 To reproduce the results presented in our paper, you need to create wandb account and specify your own wandb account name in configs/*.yaml. 
 ```bash
 # For training
-python train.py configs/hybridNet.yaml
+python train.py
 
-
-# For test
-python test.py configs/hybridNet.yaml
 ```
 
 ## TO BE ADDED
