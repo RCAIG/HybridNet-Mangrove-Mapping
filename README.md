@@ -1,6 +1,6 @@
 # A hybrid neural network for mangrove mapping considering tide states using Sentinel-2 imagery
 Author: Longjie Ye, Qihao Weng* | [link](https://www.sciencedirect.com/science/article/pii/S0034425725003219)  
-Remote Sensing of Environment
+Journal: Remote Sensing of Environment<br> Date: November 2025
  
 
 ## Set up environment
